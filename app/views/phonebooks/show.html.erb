@@ -10,6 +10,6 @@
   <%= @phonebook.user_id %>
 </p>
 
-
-<%= link_to 'Edit', edit_user_phonebook_path(@user,@phonebook) %> |
-<%= link_to 'Back', user_path(@user) %>
+<%= link_to 'Edit', edit_user_phonebook_path(@phonebook) %> |
+<%= link_to 'Back', user_path(@user) %> |
+<%= link_to 'Phonebook Entries', user_phonebook_entries_path(@user,@phonebook) %>
