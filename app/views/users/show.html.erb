@@ -1,26 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
+<p>Welcome, <%= @user.first_name + ' ' + @user.last_name %></p>
 
 <p>
   <b>Email address:</b>
   <%= @user.email_address %>
 </p>
 
+<table>
+  <tr>
+    <th>Phonebooks (<%= link_to 'add new', new_user_phonebook_path(@user.id) %>)</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @user.phonebooks.each do |phonebook| %>
+  <tr>
+    <td><%= link_to phonebook.name, user_phonebook_path(@user.id,phonebook) %></td>
+    <td><%= link_to 'Edit', edit_user_phonebook_path(@user.id,phonebook) %></td>
+    <td><%= link_to 'Destroy', user_phonebook_path(@user.id,phonebook), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back to Users', users_path %> |
-<%= link_to 'Phonebooks', user_phonebooks_path(@user) %>
+<%= link_to 'Edit', edit_user_path(@user) %>
