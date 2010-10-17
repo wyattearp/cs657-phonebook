@@ -1,8 +1,8 @@
 class PhonebooksController < ApplicationController
   # GET /phonebooks
   # GET /phonebooks.xml
+  before_filter :load_user
   def index
-    @user = User.find(params[:user_id])
     @phonebooks = @user.phonebooks
 
     respond_to do |format|
@@ -14,7 +14,6 @@ class PhonebooksController < ApplicationController
   # GET /phonebooks/1
   # GET /phonebooks/1.xml
   def show
-    @user = User.find(params[:user_id])
     @phonebook = Phonebook.find(params[:id])
     #TODO add in only users phonebooks check here
 
@@ -27,7 +26,6 @@ class PhonebooksController < ApplicationController
   # GET /phonebooks/new
   # GET /phonebooks/new.xml
   def new
-    @user = User.find(params[:user_id])
     @phonebook = @user.phonebooks.build
 
     respond_to do |format|
@@ -38,14 +36,12 @@ class PhonebooksController < ApplicationController
 
   # GET /phonebooks/1/edit
   def edit
-    @user = User.find(params[:user_id])
     @phonebook = Phonebook.find(params[:id])
   end
 
   # POST /phonebooks
   # POST /phonebooks.xml
   def create
-    @user = User.find(params[:user_id])
     @phonebook = @user.phonebooks.build(params[:phonebook])
 
     respond_to do |format|
@@ -62,7 +58,6 @@ class PhonebooksController < ApplicationController
   # PUT /phonebooks/1
   # PUT /phonebooks/1.xml
   def update
-    @user = User.find(params[:user_id])
     @phonebook = Phonebook.find(params[:id])
 
     respond_to do |format|
@@ -79,7 +74,6 @@ class PhonebooksController < ApplicationController
   # DELETE /phonebooks/1
   # DELETE /phonebooks/1.xml
   def destroy
-    @user = User.find(params[:user_id])
     @phonebook = Phonebook.find(params[:id])
     @phonebook.destroy
 
@@ -88,4 +82,5 @@ class PhonebooksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end
