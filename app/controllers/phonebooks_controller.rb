@@ -38,6 +38,7 @@ class PhonebooksController < ApplicationController
 
   # GET /phonebooks/1/edit
   def edit
+    @user = User.find(params[:user_id])
     @phonebook = Phonebook.find(params[:id])
   end
 
@@ -49,7 +50,7 @@ class PhonebooksController < ApplicationController
 
     respond_to do |format|
       if @phonebook.save
-        format.html { redirect_to(user_phonebook_path, :notice => 'Phonebook was successfully created.') }
+        format.html { redirect_to(user_phonebook_path(@user.id,@phonebook), :notice => 'Phonebook was successfully created.') }
         format.xml  { render :xml => @phonebook, :status => :created, :location => @phonebook }
       else
         format.html { render :action => "new" }
@@ -61,11 +62,12 @@ class PhonebooksController < ApplicationController
   # PUT /phonebooks/1
   # PUT /phonebooks/1.xml
   def update
+    @user = User.find(params[:user_id])
     @phonebook = Phonebook.find(params[:id])
 
     respond_to do |format|
       if @phonebook.update_attributes(params[:phonebook])
-        format.html { redirect_to(@phonebook, :notice => 'Phonebook was successfully updated.') }
+        format.html { redirect_to(user_phonebook_path(@user.id,@phonebook), :notice => 'Phonebook was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -77,11 +79,12 @@ class PhonebooksController < ApplicationController
   # DELETE /phonebooks/1
   # DELETE /phonebooks/1.xml
   def destroy
+    @user = User.find(params[:user_id])
     @phonebook = Phonebook.find(params[:id])
     @phonebook.destroy
 
     respond_to do |format|
-      format.html { redirect_to(phonebooks_url) }
+      format.html { redirect_to(user_phonebooks_path(@user)) }
       format.xml  { head :ok }
     end
   end

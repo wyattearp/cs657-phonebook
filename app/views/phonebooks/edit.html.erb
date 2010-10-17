@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @phonebook %> |
-<%= link_to 'Back', user_phonebooks_path %>
+<%= link_to 'Show', user_phonebook_path(@user,@phonebook) %> |
+<%= link_to 'Back', user_phonebooks_path(@user) %>
