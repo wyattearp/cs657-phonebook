@@ -12,14 +12,21 @@
   <div id="header">
     <table border="0" width="100%">
       <tr>
-        <td width="50%">
-          <h1><a href="http://localhost:3000/">Phizzle Bizzles</a></h1>
+        <td width="70%">
+          <h1><a href="http://localhost:3000/"><img src="/images/phizzlebizzle.jpg" border="0" /></a></h1>
         </td>
-        <td width="50%" align="right">
+        <td width="30%" align="right">
           <% if session[:user].nil? %>
             <a href="#">Login</a>
           <%else%>
-            <a href="#">Logout</a>
+            <table border="0" width="100%">
+              <tr>
+                <td align="right"><a href="http://localhost:3000/logout">Logout</a></td>
+              </tr>
+              <tr>
+                <td align="right">Welcome, <%= session[:user].login %></td>
+              </tr>
+            </table>
           <% end %>
         </td>
       </tr>
