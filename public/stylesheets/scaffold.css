@@ -77,7 +77,7 @@ div.field, div.actions {
  color: #333;
  border: 1px solid #ccc;
  background:#CCC8B3;
- margin: 0px 0px 5px 0px;
+ margin: 10px 0px 5px 0px;
  padding: 10px 10px 10px 10px;
  height: 350px;
 }
@@ -90,10 +90,10 @@ div.field, div.actions {
  padding: 10px;
 }
 
-#tabs {
+/*#tabs {
 	float:left;
 	width:100%;
-	background:#fff; /*#efefef;*/
+	background:#fff; #efefef;
 	font-size:93%;
 	line-height:normal;
 	border-bottom:1px solid #666;
@@ -127,10 +127,10 @@ div.field, div.actions {
 	color:#FFF;
 }
 
-/* Commented Backslash Hack hides rule from IE5-Mac \*/
+ Commented Backslash Hack hides rule from IE5-Mac \
 #tabs a span {float:none;}
 
-/* End IE5-Mac hack */
+ End IE5-Mac hack 
 #tabs a:hover span {
 	color:#FFF;
 }
@@ -141,4 +141,46 @@ div.field, div.actions {
 
 #tabs a:hover span {
 	background-position:100% -42px;
+}*/
+
+/* begin css tabs */
+
+ul#tabnav { /* general settings */
+text-align: left; /* set to left, right or center */
+margin: 1em 0 1em 0; /* set margins as desired */
+font: bold 11px verdana, arial, sans-serif; /* set font as desired */
+border-bottom: 1px solid #6c6; /* set border COLOR as desired */
+list-style-type: none;
+padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+}
+
+ul#tabnav li { /* do not change */
+display: inline;
+}
+
+body#tab1 li.tab1, body#tab2 li.tab2, body#tab3 li.tab3, body#tab4 li.tab4 { /* settings for selected tab */
+border-bottom: 1px solid #fff; /* set border color to page background color */
+background-color: #fff; /* set background color to match above border color */
+}
+
+body#tab1 li.tab1 a, body#tab2 li.tab2 a, body#tab3 li.tab3 a, body#tab4 li.tab4 a { /* settings for selected tab link */
+background-color: #fff; /* set selected tab background color as desired */
+color: #000; /* set selected tab link color as desired */
+position: relative;
+top: 1px;
+padding-top: 4px; /* must change with respect to padding (X) above and below */
+}
+
+ul#tabnav li a { /* settings for all tab links */
+padding: 3px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+border: 1px solid #6c6; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+background-color: #cfc; /* set unselected tab background color as desired */
+color: #666; /* set unselected tab link color as desired */
+margin-right: 0px; /* set additional spacing between tabs as desired */
+text-decoration: none;
+border-bottom: none;
+}
+
+ul#tabnav a:hover { /* settings for hover effect */
+background: #fff; /* set desired hover color */
 }

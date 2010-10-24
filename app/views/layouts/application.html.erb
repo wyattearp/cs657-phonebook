@@ -17,7 +17,7 @@
         </td>
         <td width="30%" align="right">
           <% if session[:user].nil? %>
-            <a href="#">Login</a>
+            <a href="http://localhost:3000/login">Login</a>
           <%else%>
             <table border="0" width="100%">
               <tr>
@@ -35,14 +35,14 @@
   <!-- End Header -->
   <!-- Begin Naviagtion -->
   <!--<div id="navigation">-->
-    <div id="tabs">
+    <%#*<div id="tabs">%>
       <ul>
-        <li><a href="http://localhost:3000/"><span>People</span></a></li>
-        <li><a href="http://localhost:3000/"><span>Places</span></a></li>
-        <li><a href="http://localhost:3000/"><span>Politics</span></a></li>
-        <li><a href="http://localhost:3000/"><span>Reverse Lookup</span></a></li>
+        <li class="tab1"><a href="http://localhost:3000/"><span>People</span></a></li>
+        <li class="tab2"><a href="http://localhost:3000/"><span>Places</span></a></li>
+        <li class="tab3"><a href="http://localhost:3000/"><span>Politics</span></a></li>
+        <li class="tab4"><a href="http://localhost:3000/"><span>Reverse Lookup</span></a></li>
       </ul>
-    </div>
+    <%#*</div>%>
   <!--</div>-->
   <!-- End Naviagtion -->
   <!-- Begin Content -->
