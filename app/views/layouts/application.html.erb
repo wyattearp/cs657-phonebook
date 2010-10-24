@@ -44,7 +44,10 @@
   <div id="content"><%= yield %></div>
   <!-- End Content -->
   <!-- Begin Footer -->
-  <div id="footer"> This is the Footer </div>
+  <div style="text-align: center;" id="footer"> Copyright © 2010 nobody.
+    This page created by nobody and maintained by nobody.<br>
+    Last modified on October 24, 2010.<br>
+    Your IP address is: <%= IPSocket.getaddress(Socket.gethostname) %></div>
   <!-- End Footer -->
  </div>
 </body>
