@@ -1,7 +1,8 @@
 class PhonebooksController < ApplicationController
   # GET /phonebooks
   # GET /phonebooks.xml
-  before_filter :load_user
+  before_filter :authenticate, :load_user
+  
   def index
     @phonebooks = @user.phonebooks
 
