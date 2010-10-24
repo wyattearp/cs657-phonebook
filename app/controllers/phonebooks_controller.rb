@@ -62,7 +62,7 @@ class PhonebooksController < ApplicationController
 
     respond_to do |format|
       if @phonebook.update_attributes(params[:phonebook])
-        format.html { redirect_to(user_phonebook_path(@user.id,@phonebook), :notice => 'Phonebook was successfully updated.') }
+        format.html { redirect_to(user_path(@user), :notice => 'Phonebook was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class PhonebooksController < ApplicationController
     @phonebook.destroy
 
     respond_to do |format|
-      format.html { redirect_to(user_phonebooks_path(@user)) }
+      format.html { redirect_to(user_path(@user)) }
       format.xml  { head :ok }
     end
   end

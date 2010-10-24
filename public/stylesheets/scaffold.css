@@ -54,3 +54,91 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+
+/*----------------------------------------*/
+
+#wrapper {
+ margin: 0 auto;
+ width: 922px;
+}
+#header {
+ width: 900px;
+ color: #333;
+ padding: 10px;
+ border: 1px solid #ccc;
+ height: 100px;
+ margin: 10px 0px 5px 0px;
+ background: #DAC8BF;
+}
+
+#content { 
+ width: 900px;
+ color: #333;
+ border: 1px solid #ccc;
+ background:#CCC8B3;
+ margin: 0px 0px 5px 0px;
+ padding: 10px;
+ height: 350px;
+}
+#footer { 
+ width: 900px;
+ color: #333;
+ border: 1px solid #ccc;
+ background-color:#F3F2ED;
+ margin: 0px 0px 10px 0px;
+ padding: 10px;
+}
+
+#tabs {
+	float:left;
+	width:100%;
+	background:#fff; /*#efefef;*/
+	font-size:93%;
+	line-height:normal;
+	border-bottom:1px solid #666;
+}
+
+#tabs ul {
+	margin:0;
+	padding:10px 10px 0 50px;
+	list-style:none;
+}
+
+#tabs li {
+	display:inline;
+	margin:0;
+	padding:0;
+}
+
+#tabs a {
+	float:left;
+	background:url("/images/tableft.gif") no-repeat left top;
+	margin:0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+}
+
+#tabs a span {
+	float:left;
+	display:block;
+	background:url("/images/tabright.gif") no-repeat right top;
+	padding:5px 15px 4px 6px;
+	color:#FFF;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span {float:none;}
+
+/* End IE5-Mac hack */
+#tabs a:hover span {
+	color:#FFF;
+}
+
+#tabs a:hover {
+	background-position:0% -42px;
+}
+
+#tabs a:hover span {
+	background-position:100% -42px;
+}
