@@ -9,7 +9,29 @@
 <body>
 <div id="wrapper">
   <!-- Begin Header -->
-  <div id="header"><h1><a href="http://localhost:3000/">Phizzle Bizzles</a></h1></div>
+  <div id="header">
+    <table border="0" width="100%">
+      <tr>
+        <td width="70%">
+          <h1><a href="http://localhost:3000/"><img src="/images/phizzlebizzle.jpg" border="0" /></a></h1>
+        </td>
+        <td width="30%" align="right">
+          <% if session[:user].nil? %>
+            <a href="#">Login</a>
+          <%else%>
+            <table border="0" width="100%">
+              <tr>
+                <td align="right"><a href="http://localhost:3000/logout">Logout</a></td>
+              </tr>
+              <tr>
+                <td align="right">Welcome, <%= session[:user].login %></td>
+              </tr>
+            </table>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </div>
   <!-- End Header -->
   <!-- Begin Naviagtion -->
   <!--<div id="navigation">-->
@@ -30,7 +52,7 @@
   <div style="text-align: center;" id="footer"> Copyright © 2010 nobody.
     This page created by nobody and maintained by nobody.<br>
     Last modified on October 24, 2010.<br>
-    Your IP address is: <%= IPSocket.getaddress(Socket.gethostname) %></div>
+    Your IP address is: <%= session[:ip] %></div>
   <!-- End Footer -->
  </div>
 </body>

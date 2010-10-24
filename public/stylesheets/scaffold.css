@@ -64,12 +64,12 @@ div.field, div.actions {
 }
 #header {
  width: 900px;
- color: #333;
+ color: #ccc;
  padding: 10px;
  border: 1px solid #ccc;
  height: 100px;
  margin: 10px 0px 5px 0px;
- background: #DAC8BF;
+ background: #fff;
 }
 
 #content { 
@@ -78,7 +78,7 @@ div.field, div.actions {
  border: 1px solid #ccc;
  background:#CCC8B3;
  margin: 0px 0px 5px 0px;
- padding: 10px;
+ padding: 10px 10px 10px 10px;
  height: 350px;
 }
 #footer { 
