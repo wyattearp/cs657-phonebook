@@ -9,7 +9,24 @@
 <body>
 <div id="wrapper">
   <!-- Begin Header -->
-  <div id="header"><h1><a href="http://localhost:3000/">Phizzle Bizzles</a></h1></div>
+  <div id="header">
+    <table border="0" width="100%">
+      <tr>
+        <td align="right">
+          <% if session[:user].nil? %>
+            <a href="#">Login</a>
+          <%else%>
+            <a href="#">Logout</a>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1><a href="http://localhost:3000/">Phizzle Bizzles</a></h1>
+        </td>
+      </tr>
+    </table>
+  </div>
   <!-- End Header -->
   <!-- Begin Naviagtion -->
   <!--<div id="navigation">-->
