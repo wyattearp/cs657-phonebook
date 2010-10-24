@@ -46,7 +46,7 @@ class PhonebooksController < ApplicationController
 
     respond_to do |format|
       if @phonebook.save
-        format.html { redirect_to(user_path(@user), :notice => 'Phonebook was successfully created.') }
+        format.html { redirect_to(user_phonebooks_path(@user), :notice => 'Phonebook was successfully created.') }
         format.xml  { render :xml => @phonebook, :status => :created, :location => @phonebook }
       else
         format.html { render :action => "new" }
