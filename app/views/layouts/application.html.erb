@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cs657Phonebook</title>
+  <title>Phizzle Bizzles</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="wrapper">
+  <!-- Begin Header -->
+  <div id="header"><h1><a href="http://localhost:3000/">Phizzle Bizzles</a></h1></div>
+  <!-- End Header -->
+  <!-- Begin Naviagtion -->
+  <!--<div id="navigation">-->
+    <div id="tabs">
+      <ul>
+        <li><a href="http://localhost:3000/"><span>People</span></a></li>
+        <li><a href="http://localhost:3000/"><span>Places</span></a></li>
+        <li><a href="http://localhost:3000/"><span>Politics</span></a></li>
+        <li><a href="http://localhost:3000/"><span>Reverse Lookup</span></a></li>
+      </ul>
+    </div>
+  <!--</div>-->
+  <!-- End Naviagtion -->
+  <!-- Begin Content -->
+  <div id="content"><%= yield %></div>
+  <!-- End Content -->
+  <!-- Begin Footer -->
+  <div id="footer"> This is the Footer </div>
+  <!-- End Footer -->
+ </div>
 </body>
 </html>
