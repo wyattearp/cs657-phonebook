@@ -50,9 +50,12 @@
   <!-- End Content -->
   <!-- Begin Footer -->
   <div style="text-align: center;" id="footer"> Copyright © 2010 nobody.
-    This page created by nobody and maintained by nobody.<br>
-    Last modified on October 24, 2010.<br>
-    Your IP address is: <%= session[:ip] %></div>
+    This page created by nobody and maintained by nobody.<br/>
+    Last modified on October 24, 2010.<br/>
+    <% if not session[:ip].nil? %>
+      Your IP address is: <%= session[:ip] %>
+    <% end %>
+  </div>
   <!-- End Footer -->
  </div>
 </body>

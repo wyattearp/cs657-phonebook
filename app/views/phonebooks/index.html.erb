@@ -13,7 +13,7 @@
   <tr>
     <td><%= phonebook.name %></td>
     <td><%= phonebook.user_id %></td>
-    <td><%= link_to 'Show', user_phonebook_path(@user.id,phonebook) %></td>
+    <td><%= link_to 'Show', user_phonebook_entries_path(@user.id,phonebook) %></td>
     <td><%= link_to 'Edit', edit_user_phonebook_path(@user.id,phonebook) %></td>
     <td><%= link_to 'Destroy', user_phonebook_path(@user.id,phonebook), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
