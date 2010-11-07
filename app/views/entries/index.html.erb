@@ -1,18 +1,21 @@
 <h1><%= @phonebook.name %> entries</h1>
 
-<table>
+<table width="50%">
   <tr>
-    <th>Name</th>
-    <th>Phone</th>
+    <th width="40%">Name</th>
+    <th width="59%">Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @entries.each do |entry| %>
-  <tr>
+  <tr style="background-color: <%= cycle("#fff", "#c0c0c0") %>">
     <td><%= entry.name %></td>
     <td><%= number_to_phone(entry.phone, :delimiter => "-", :area_code => true) %></td>
-    <td><%= link_to 'Show', user_phonebook_entry_path(@user,@phonebook,entry) %></td>
-    <td><%= link_to 'Edit', edit_user_phonebook_entry_path(@user,@phonebook,entry) %></td>
-    <td><%= link_to 'Destroy', user_phonebook_entry_path(@user,@phonebook,entry), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td style="padding: 3px;"><%= link_to 'Details', user_phonebook_entry_path(@user,@phonebook,entry) %></td>
+    <td style="padding: 3px;"><%= link_to 'Edit', edit_user_phonebook_entry_path(@user,@phonebook,entry) %></td>
+    <td style="padding: 3px;"><%= link_to 'Destroy', user_phonebook_entry_path(@user,@phonebook,entry), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
