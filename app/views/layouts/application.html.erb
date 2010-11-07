@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Phizzle Bizzles</title>
+  <title>Net Pages</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -13,19 +13,18 @@
     <table border="0" width="100%">
       <tr>
         <td width="70%">
-          <h1><a href="http://localhost:3000/"><img src="/images/main_logo.png" border="0" /></a></h1>
+          <h1><a href="http://localhost:3000/" id="logo"><img src="/images/main_logo.png" border="0" /></a></h1>
         </td>
-        <td width="30%" align="right">
+        <td width="30%" align="right" style="font-size:1.6em;">
           <% if session[:user].nil? %>
-            <a href="http://localhost:3000/login">Login</a><br />
-            Not a user? <a href="http://localhost:3000/signup">Signup!</a>
+          <a href="http://localhost:3000/login">Login</a> / <a href="http://localhost:3000/signup">Register</a>
           <%else%>
             <table border="0" width="100%">
               <tr>
-                <td align="right"><a href="http://localhost:3000/logout">Logout</a></td>
+                <td align="right" style="font-size:0.6em; line-height: 1;"><a href="http://localhost:3000/logout">Logout</a></td>
               </tr>
               <tr>
-                <td align="right">Welcome, <%= session[:user].full_name %></td>
+                <td align="right" style="font-size:1.7em; line-height: 1;">Welcome, <%= session[:user].first_name %></td>
               </tr>
             </table>
           <% end %>
