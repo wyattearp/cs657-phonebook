@@ -37,5 +37,11 @@
   <%= @entry.zip %>
 </p>
 
+<p>
+  <%
+  location = @entry.address1 + ',' + @entry.city + ',' + @entry.state
+  %>
+  <img src="http://maps.google.com/maps/api/staticmap?center=<%= location %>&zoom=14&size=512x512&maptype=roadmap&markers=color:blue|label:S|<%= location %>&sensor=false" border="0" />
+</p>
 <%= link_to 'Edit', edit_user_phonebook_entry_path(@user,@phonebook,@entry) %> |
 <%= link_to 'Back', user_phonebook_entries_path(@user,@phonebook) %>
