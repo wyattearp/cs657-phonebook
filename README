@@ -5,10 +5,10 @@ Implement a phone book as a web application that does the following:
  * lets the user add-to, delete-from or search the phone book database
  ** Add - DONE
  ** Delete - DONE
- ** Search - IP
+ ** Search - DONE
  * allow maintaining of multiple phone books for different users - DONE
  * users will be required to create their accounts and will have to authenticate the access to their respective phone books using a system of username and password - DONE
  * displays the IP address of a visitor - DONE
  * e-mails the phone book as a file to the indicated address - IP
- * make the GUI as elegant and demonstrative as possible - IP
+ * make the GUI as elegant and demonstrative as possible - DONE
 
