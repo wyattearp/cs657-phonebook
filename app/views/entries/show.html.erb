@@ -10,6 +10,32 @@
   <%= @entry.phone %>
 </p>
 
+<p>
+  <b>Address Line 1:</b>
+  <%= @entry.address1 %>
+</p>
+
+<% if not @entry.address2.empty? %>
+<p>
+  <b>Address Line 2:</b>
+  <%= @entry.address2 %>
+</p>
+<% end %>
+
+<p>
+  <b>City:</b>
+  <%= @entry.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @entry.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @entry.zip %>
+</p>
 
 <%= link_to 'Edit', edit_user_phonebook_entry_path(@user,@phonebook,@entry) %> |
 <%= link_to 'Back', user_phonebook_entries_path(@user,@phonebook) %>
