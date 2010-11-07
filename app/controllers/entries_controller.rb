@@ -1,9 +1,9 @@
 class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
-  before_filter :load_user, :load_phonebook
+  before_filter :authenticate, :load_user, :load_phonebook, :secure_user_permissions
   def index
-    @entries = Entry.all
+    @entries = @phonebook.entries.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,7 @@ class EntriesController < ApplicationController
   # GET /entries/new
   # GET /entries/new.xml
   def new
-    @entry = Entry.new
+    @entry = @phonebook.entries.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
-    @entry = Entry.new(params[:entry])
+    @entry = @phonebook.entries.build(params[:entry])
 
     respond_to do |format|
       if @entry.save
@@ -84,5 +84,10 @@ class EntriesController < ApplicationController
 
   def load_phonebook
     @phonebook = Phonebook.find(params[:phonebook_id])
+    if @user == @phonebook.user
+      return @phonebook
+    else
+      return false
+    end
   end
 end
