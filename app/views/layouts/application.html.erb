@@ -13,7 +13,7 @@
     <table border="0" width="100%">
       <tr>
         <td width="70%">
-          <h1><a href="http://localhost:3000/"><img src="/images/phizzlebizzle.jpg" border="0" /></a></h1>
+          <h1><a href="http://localhost:3000/"><img src="/images/main_logo.png" border="0" /></a></h1>
         </td>
         <td width="30%" align="right">
           <% if session[:user].nil? %>
@@ -34,25 +34,23 @@
   </div>
   <!-- End Header -->
   <!-- Begin Naviagtion -->
-  <!--<div id="navigation">-->
-    <%#*<div id="tabs">%>
-      <ul>
+  <div>
+      <ul id="menu">
         <% if session[:user].nil? %>
         <!-- unauthenticated user -->
-        <li class="tab1"><a href="http://localhost:3000/"><span>People</span></a></li>
-        <li class="tab2"><a href="http://localhost:3000/"><span>Places</span></a></li>
-        <li class="tab3"><a href="http://localhost:3000/"><span>Politics</span></a></li>
-        <li class="tab4"><a href="http://localhost:3000/"><span>Reverse Lookup</span></a></li>
+        <li class="button"><a href="http://localhost:3000/"><span>People</span></a></li>
+        <li class="button"><a href="http://localhost:3000/"><span>Places</span></a></li>
+        <li class="button"><a href="http://localhost:3000/"><span>Politics</span></a></li>
+        <li class="button"><a href="http://localhost:3000/"><span>Reverse Lookup</span></a></li>
         <% else %>
         <!-- authenticated user -->
-        <li class="tab1"><%= link_to 'People', user_phonebooks_path(session[:user]) %></li>
-        <li class="tab2"><a href="http://localhost:3000/"><span>Places</span></a></li>
-        <li class="tab3"><a href="http://localhost:3000/"><span>Politics</span></a></li>
-        <li class="tab4"><a href="http://localhost:3000/"><span>Reverse Lookup</span></a></li>
+        <li class="button"><%= link_to 'People', user_phonebooks_path(session[:user]) %></li>
+        <li class="button"><a href="http://localhost:3000/"><span>Places</span></a></li>
+        <li class="button"><a href="http://localhost:3000/"><span>Politics</span></a></li>
+        <li class="button"><a href="http://localhost:3000/"><span>Reverse Lookup</span></a></li>
         <% end %>
       </ul>
-    <%#*</div>%>
-  <!--</div>-->
+  </div>
   <!-- End Naviagtion -->
   <!-- Begin Content -->
   <div id="content"><%= yield %></div>
