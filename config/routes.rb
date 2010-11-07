@@ -1,5 +1,9 @@
 Cs657Phonebook::Application.routes.draw do
 
+  get "search/standard"
+
+  get "search/reverse"
+
   resources :entries
   resources :users do
     member do
