@@ -1,0 +1,19 @@
+<h1>Perform a Reverse Phone Search</h1>
+
+<%= form_tag search_reverse_path %>
+<%= label_tag "Reverse Phone Number Search" %><br />
+<%= text_field "search", "value" %><br />
+<%= submit_tag "Search!" %>
+
+<div>
+  <% if not params[:search].nil? %>
+  <h2>Search results for "<%= params[:search][:value] %>"</h2>
+  <% end %>
+  <% if not @search_results.nil? %>
+  <ul>
+    <% @search_results.each do |sr| %>
+    <li><%= link_to sr.name, user_phonebook_entry_path(session[:user], sr.phonebook, sr) %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
