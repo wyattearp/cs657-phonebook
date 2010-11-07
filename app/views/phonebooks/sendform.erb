@@ -1,0 +1,10 @@
+<h1>Send Email</h1>
+<%= form_tag phonebook_sendemail_path(@phonebook)%>
+<p><label for="email_to">Recipient</label>:
+<%= text_field 'email', 'to' %></p>
+<p><label for="email_subject">Subject</label>:
+<%= text_field 'email', 'subject' %></p>
+<p><label for="email">Message</label><br/>
+<%= text_area 'email', 'message' %></p>
+<%= hidden_field 'phonebook_id', @phonebook.id %>
+<%= submit_tag "Send" %>

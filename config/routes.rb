@@ -9,7 +9,8 @@ Cs657Phonebook::Application.routes.draw do
     end
     resources :phonebooks do
       resources :entries
-      get :sendemail
+      get :sendform
+      post :sendemail
     end
   end
 
