@@ -93,7 +93,7 @@ class PhonebooksController < ApplicationController
 
     respond_to do |format|
       if @phonebook.update_attributes(params[:phonebook])
-        format.html { redirect_to(user_phonebook_path(@user,@phonebook), :notice => 'Phonebook was successfully emailed.') }
+        format.html { redirect_to(user_phonebook_entries_path(@user,@phonebook), :notice => 'Phonebook was successfully emailed.') }
         format.xml  { head :ok }
       end
     end
