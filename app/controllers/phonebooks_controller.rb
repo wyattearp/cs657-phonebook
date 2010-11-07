@@ -83,5 +83,17 @@ class PhonebooksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def sendemail
+    @phonebook = Phonebook.find(params[:id])
+    PhonebookMailer.sendphonebook(@user,@phonebook).deliver
+
+    respond_to do |format|
+      if @phonebook.update_attributes(params[:phonebook])
+        format.html { redirect_to(user_phonebook_path(@user,@phonebook), :notice => 'Phonebook was successfully emailed.') }
+        format.xml  { head :ok }
+      end
+    end
+  end
   
 end

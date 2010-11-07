@@ -21,3 +21,4 @@
 
 <%= link_to 'New Entry', new_user_phonebook_entry_path(@user,@phonebook) %> |
 <%= link_to 'Back to Phonebooks', user_phonebooks_path(@user) %>
+<%= link_to 'Email Phonebook', :controller => "phonebooks", :action => "sendemail", :id => @phonebook.id %>
