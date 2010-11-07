@@ -79,7 +79,7 @@ div.field, div.actions { margin-bottom: 10px; }
  background: #f0f0f0;
  margin: 10px 0px 5px 0px;
  padding: 10px 10px 10px 10px;
- height: 350px;
+ height: auto;
 }
 #footer { 
  width: 900px;
