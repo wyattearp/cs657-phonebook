@@ -1,88 +1,82 @@
 body {
-    background: #D4C792 url(/images/main_bg.gif);
-    /*background-color: #fff;*/
-    color: #333;
+ background: #D4C792 url(/images/main_bg.gif);
+ color: #333;
 }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+ font-family: verdana, arial, helvetica, sans-serif;
+ font-size:   13px;
+ line-height: 18px;
 }
 
 pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+ background-color: #eee;
+ padding: 10px;
+ font-size: 11px;
 }
 
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
-div.field, div.actions {
-  margin-bottom: 10px;
-}
+div.field, div.actions { margin-bottom: 10px; }
 
-#notice {
-  color: green;
-}
+#notice { color: green; }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+ padding: 2px;
+ background-color: red;
+ display: table;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+ width: 450px;
+ border: 2px solid red;
+ padding: 7px;
+ padding-bottom: 0;
+ margin-bottom: 20px;
+ background-color: #f0f0f0;
 }
 
 #error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
+ text-align: left;
+ font-weight: bold;
+ padding: 5px 5px 5px 15px;
+ font-size: 12px;
+ margin: -7px;
+ margin-bottom: 0px;
+ background-color: #c00;
+ color: #fff;
 }
 
 #error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
+ font-size: 12px;
+ list-style: square;
 }
-
-
 /*----------------------------------------*/
-
 #wrapper {
  margin: 0 auto;
  width: 922px;
 }
 #header {
  background: #D4C792 url(/images/main_bg.gif);
- /* background: #fff; */
  width: 922px;
- color: #ccc;
+ color: #fff;
  padding: 2px;
  border: 1px solid #2cafe3;
  height: 150px;
  margin: 10px 0px 5px 0px;
 }
 
+#logo a:hover { text-decoration: none; background-color: transparent; background: none; }
+#logo a:hover img { text-decoration: none; background-color: transparent; background: none; }
+#header a:visited { color: #d0d0d0; }
+
 #content { 
  width: 900px;
  color: #333333;
  border: 3px solid #2cafe3;
  background: #f0f0f0;
- /*background:#CCC8B3;*/
  margin: 10px 0px 5px 0px;
  padding: 10px 10px 10px 10px;
  height: 350px;
@@ -90,62 +84,55 @@ div.field, div.actions {
 #footer { 
  width: 900px;
  color: #333333;
- /*border: 1px solid #ccc;
- background-color:#F3F2ED;*/
  border: 3px solid #2cafe3;
  background: #f0f0f0;
  margin: 0px 0px 10px 0px;
  padding: 10px;
 }
 
-ul#menu
-{
-	margin:0;
-	padding:0;
-	list-style-type:none;
-	width:auto;
-	position:relative;
-	display:block;
-	height:30px;
-	font-size:12px;
-	font-weight:bold;
-	background:transparent url(/images/nav_bg.png) repeat-x top left;
-	font-family:Arial, Helvetica, sans-serif;
-	border-bottom:1px solid #000;
-	border-top:1px solid #000;
+ul#menu {
+ margin:0;
+ padding:0;
+ list-style-type:none;
+ width:auto;
+ position:relative;
+ display:block;
+ height:30px;
+ font-size:12px;
+ font-weight:bold;
+ background:transparent url(/images/nav_bg.png) repeat-x top left;
+ font-family:Arial, Helvetica, sans-serif;
+ border-bottom:1px solid #000;
+ border-top:1px solid #000;
 }
 
-ul#menu li
-{
-	display:block;
-	float:left;
-	margin:0;
-	padding:0;
+ul#menu li {
+ display:block;
+ float:left;
+ margin:0;
+ padding:0;
 }
 
-ul#menu li a
-{
-	display:block;
-	float:left;
-	color:#C0C0C0;
-	text-decoration:none;
-	font-weight:bold;
-	padding:8px 20px 0 20px;
+ul#menu li a {
+ display:block;
+ float:left;
+ color:#C0C0C0;
+ text-decoration:none;
+ font-weight:bold;
+ padding:8px 20px 0 20px;
 }
 
-ul#menu li a:hover
-{
-	color:#FFFFFF;
-	height:22px;
-	background:transparent url(/images/nav_bg.png) 0px -30px no-repeat;
+ul#menu li a:hover {
+ color:#FFFFFF;
+ height:22px;
+ background:transparent url(/images/nav_bg.png) 0px -30px no-repeat;
 }
 
 
-ul#menu li a.current
-{
-	display:inline;
-	height:22px;
-	background:transparent url(/images/nav_bg.png) 0px -30px no-repeat;
-	float:left;
-	margin:0;
+ul#menu li a.current {
+ display:inline;
+ height:22px;
+ background:transparent url(/images/nav_bg.png) 0px -30px no-repeat;
+ float:left;
+ margin:0;
 }
