@@ -4,8 +4,10 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <p>Hello &lt;%= @user.name %&gt;,<br />
-      You have been sent a phonebook. We don't actually know what that entails yet.</p>
-    <p>In the meantime, please enjoy this worthless spam."</p>
+    <p>Hello,<br />
+      You have been sent a phonebook from <%= @user.first_name %> <%= @user.last_name %>. We don't actually know what that entails yet.</p>
+    <p>In the meantime, please enjoy this worthless spam. Thanks,"</p>
+    <p></p>
+    <p>-The Net Pages Team</p>
   </body>
 </html> 
