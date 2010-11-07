@@ -24,7 +24,7 @@
                 <td align="right" style="font-size:0.6em; line-height: 1;"><a href="http://localhost:3000/logout">Logout</a></td>
               </tr>
               <tr>
-                <td align="right" style="font-size:1.7em; line-height: 1;">Welcome, <%= session[:user].first_name.capitalize %></td>
+                <td align="right" style="font-size:1.7em; line-height: 1;">Welcome, <%= session[:user].login.capitalize %></td>
               </tr>
             </table>
           <% end %>
