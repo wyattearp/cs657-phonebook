@@ -17,14 +17,15 @@
         </td>
         <td width="30%" align="right">
           <% if session[:user].nil? %>
-            <a href="http://localhost:3000/login">Login</a>
+            <a href="http://localhost:3000/login">Login</a><br />
+            Not a user? <a href="http://localhost:3000/signup">Signup!</a>
           <%else%>
             <table border="0" width="100%">
               <tr>
                 <td align="right"><a href="http://localhost:3000/logout">Logout</a></td>
               </tr>
               <tr>
-                <td align="right">Welcome, <%= session[:user].login %></td>
+                <td align="right">Welcome, <%= session[:user].full_name %></td>
               </tr>
             </table>
           <% end %>
