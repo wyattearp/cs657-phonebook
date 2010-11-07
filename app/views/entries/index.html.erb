@@ -9,7 +9,7 @@
 <% @entries.each do |entry| %>
   <tr>
     <td><%= entry.name %></td>
-    <td><%= entry.phone %></td>
+    <td><%= number_to_phone(entry.phone, :delimiter => "-", :area_code => true) %></td>
     <td><%= link_to 'Show', user_phonebook_entry_path(@user,@phonebook,entry) %></td>
     <td><%= link_to 'Edit', edit_user_phonebook_entry_path(@user,@phonebook,entry) %></td>
     <td><%= link_to 'Destroy', user_phonebook_entry_path(@user,@phonebook,entry), :confirm => 'Are you sure?', :method => :delete %></td>
