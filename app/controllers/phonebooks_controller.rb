@@ -84,9 +84,12 @@ class PhonebooksController < ApplicationController
     end
   end
 
+  def sendform
+    @phonebook = Phonebook.find(params[:phonebook_id])
+  end
   def sendemail
-    @phonebook = Phonebook.find(params[:id])
-    PhonebookMailer.sendphonebook(@user,@phonebook).deliver
+    @phonebook = Phonebook.find(params[:phonebook_id])
+    PhonebookMailer.sendphonebook(@user,@phonebook,params[:email]).deliver
 
     respond_to do |format|
       if @phonebook.update_attributes(params[:phonebook])
