@@ -1,21 +1,19 @@
-<h1>Listing phonebooks</h1>
+<h1>Listing Phone Books</h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @phonebooks.each do |phonebook| %>
-  <tr>
+  <tr style="background-color: <%= cycle("#fff", "#c0c0c0") %>">
     <td><%= phonebook.name %></td>
-    <td><%= phonebook.user_id %></td>
-    <td><%= link_to 'Show', user_phonebook_entries_path(@user.id,phonebook) %></td>
-    <td><%= link_to 'Edit', edit_user_phonebook_path(@user.id,phonebook) %></td>
-    <td><%= link_to 'Destroy', user_phonebook_path(@user.id,phonebook), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td style="padding: 3px;"><%= link_to 'Details', user_phonebook_entries_path(@user.id,phonebook) %></td>
+    <td style="padding: 3px;"><%= link_to 'Edit', edit_user_phonebook_path(@user.id,phonebook) %></td>
+    <td style="padding: 3px;"><%= link_to 'Destroy', user_phonebook_path(@user.id,phonebook), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
