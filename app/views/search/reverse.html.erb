@@ -12,8 +12,7 @@
   <% if not @search_results.nil? %>
   <ul>
     <% @search_results.each do |sr| %>
-    <li><%= link_to sr.name, user_phonebook_entry_path(session[:user], sr.phonebook, sr) %></li>
+    <li><%= link_to "#{sr.name} ( #{sr.phone} )", user_phonebook_entry_path(session[:user], sr.phonebook, sr) %></li>
     <% end %>
   </ul>
-  <% end %>
 </div>

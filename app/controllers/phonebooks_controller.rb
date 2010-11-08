@@ -16,7 +16,6 @@ class PhonebooksController < ApplicationController
   # GET /phonebooks/1.xml
   def show
     @phonebook = Phonebook.find(params[:id])
-    #TODO add in only users phonebooks check here
 
     respond_to do |format|
       format.html # show.html.erb

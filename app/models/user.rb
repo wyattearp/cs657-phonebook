@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
 
   set_table_name 'users'
+  # sets up the connection between users and multiple phonebooks
   has_many :phonebooks
 
-
+  # only allow unique logins are allowed
   validates :login, :presence   => true,
                     :uniqueness => true,
                     :length     => { :within => 3..40 },
@@ -18,14 +19,15 @@ class User < ActiveRecord::Base
                     :length     => { :maximum => 100 },
                     :allow_nil  => true
 
+  # ensures that the user has a valid email address
   validates :email, :presence   => true,
                     :uniqueness => true,
                     :format     => { :with => Authentication.email_regex, :message => Authentication.bad_email_message },
                     :length     => { :within => 6..100 }
 
+  # we require a user to own an email account they try to sign up with
   before_create :make_activation_code
 
-  # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :first_name, :last_name, :password, :password_confirmation

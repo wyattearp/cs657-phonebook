@@ -3,12 +3,16 @@ class ApplicationController < ActionController::Base
 
   #before_filter :authenticate, :except => [:root, :login, :load_user, :authenticate, '/signup', '/register', '/login', '/logout', '/activate']
 
+  # loads the @user variable for easy permissions/resource use around the application
   def load_user
     unless @user = User.find(session[:user_id])
       flash[:notice] = "Please log in"
     end
   end
 
+  # validates that a user has been successfully authenticated via a login and their
+  # session cookie is valid
+  # additionally stores the user IP address for easy access throughout the application
   def authenticate
     unless user=User.find_by_id(session[:user_id])
       flash[:notice] = "Please log in"
@@ -18,6 +22,8 @@ class ApplicationController < ActionController::Base
     session[:ip] = request.remote_ip
   end
 
+  # can be called to ensure that a user is only accessing resources directly owned by them
+  # redirects to common user path if an an unallowed record is accessed
   def secure_user_permissions
 
     unless params[:user_id].nil?
