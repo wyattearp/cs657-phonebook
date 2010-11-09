@@ -14,5 +14,6 @@
     <% @search_results.each do |sr| %>
     <li><%= link_to "#{sr.name} ( #{sr.phone} )", user_phonebook_entry_path(session[:user], sr.phonebook, sr) %></li>
     <% end %>
+  <% end %>
   </ul>
 </div>
