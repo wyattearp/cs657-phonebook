@@ -12,7 +12,7 @@
 <% @entries.each do |entry| %>
   <tr style="background-color: <%= cycle("#fff", "#c0c0c0") %>">
     <td><%= entry.name %></td>
-    <td><%= number_to_phone(entry.phone, :delimiter => "-", :area_code => true) %></td>
+    <td><%= number_to_phone(entry.phone) %></td>
     <td style="padding: 3px;"><%= link_to 'Details', user_phonebook_entry_path(@user,@phonebook,entry) %></td>
     <td style="padding: 3px;"><%= link_to 'Edit', edit_user_phonebook_entry_path(@user,@phonebook,entry) %></td>
     <td style="padding: 3px;"><%= link_to 'Destroy', user_phonebook_entry_path(@user,@phonebook,entry), :confirm => 'Are you sure?', :method => :delete %></td>
