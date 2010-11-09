@@ -28,13 +28,13 @@ class ApplicationController < ActionController::Base
 
     unless params[:user_id].nil?
       unless (session[:user] == User.find_by_id(params[:user_id]))
-        flash[:notice] = "You don't have permssion to that resource"
+        flash[:notice] = "You don't have permssion to that user resource"
         redirect_to user_phonebooks_path(session[:user])
       end
     end
     unless params[:phonebook_id].nil?
       unless (session[:user]) == Phonebook.find_by_id(params[:phonebook_id]).user
-        flash[:notice] = "You don't have permssion to that resource"
+        flash[:notice] = "You don't have permssion to that phonebook resource"
         redirect_to user_phonebooks_path(session[:user])
       end
     end
