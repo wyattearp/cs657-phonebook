@@ -1,5 +1,5 @@
 <h1>Send Email</h1>
-<%= form_tag phonebook_sendemail_path(@phonebook)%>
+<%= form_tag phonebook_sendemail_path(@user,@phonebook)%>
 <p><label for="email_to">Recipient</label>:
 <%= text_field 'email', 'to' %></p>
 <p><label for="email_subject">Subject</label>:
