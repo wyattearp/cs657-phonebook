@@ -24,7 +24,7 @@ class PhonebookMailer < ActionMailer::Base
     # Create and send the email using the to and subject fields and attaching the requested file
 
     attachments[filename] = csv_file.read
-    mail(:from => @user.email, :to => email[:to], :subject => email[:subject])
+    mail(:from => @user.email, :to => email[:to], :subject => "[NET PAGES] #{email[:subject]}")
 
     # delete the file so we don't leave stale files and personal data on the computer
     File.delete(filename)
