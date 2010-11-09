@@ -38,8 +38,9 @@
       <ul id="menu">
         <% if session[:user].nil? %>
         <!-- unauthenticated user -->
-        <li class="button"><a href="http://localhost:3000/search/standard"><span>People</span></a></li>
-        <li class="button"><a href="http://localhost:3000/search/reverse"><span>Reverse Lookup</span></a></li>
+        <li class="button"><a href="http://localhost:3000/login"><span>People</span></a></li>
+        <li class="button"><a href="http://localhost:3000/login"><span>People Search</span></a></li>
+        <li class="button"><a href="http://localhost:3000/login"><span>Reverse Lookup</span></a></li>
         <% else %>
         <!-- authenticated user -->
         <li class="button"><%= link_to 'Phonebooks', user_phonebooks_path(session[:user]) %></li>
